@@ -8,6 +8,12 @@ This repo includes a docker-compose file that sets up a basic couchdb instance w
 
 This is made specifically to be the database server for [Notes](https://github.com/ste163/notes).
 
+## Required software
+
+- [docker-compose](https://github.com/docker/compose)
+
+## Running the container
+
 To run `docker-compose.yaml`:
 
 ```bash
