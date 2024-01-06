@@ -8,6 +8,19 @@ This repo includes a docker-compose file that sets up a basic couchdb instance w
 
 This is made specifically to be the database server for [Notes](https://github.com/ste163/notes).
 
+## Running the container (todo: cleanup formatting)
+
+- git clone the project
+- docker compose -d up
+- find the local port:
+
+```bash
+ifconfig | grep inent
+```
+
+- Typically, your local IP address will be the one that starts with 192.168. or 10.. It's usually the first inet line that doesn't start with 127.0.0.1.
+- TODO: will need to setup a static IP address for the device running the container so that the app can store the address
+
 ## Required software
 
 - [docker-compose](https://github.com/docker/compose)
