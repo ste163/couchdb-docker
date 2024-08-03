@@ -9,13 +9,18 @@ This is made specifically to be the database server for [Notes](https://github.c
 - A computer that supports docker
 - Install [docker-compose](https://github.com/docker/compose)
 
+## Create certificates
+
+(If I can do all of this with a bash command, that would be cool!)
+Because this container is running a host, we need to setup HTTPS which means creating a certificate. This will allow other devices to make secure connections, even though this is all over LAN.
+
 ## Running the container
 
 1. `git clone` the project
 2. In the project directory, run
 
 ```bash
-docker compose -d up
+docker compose up
 ```
 
 3. Once the container is running, find your local IP address:
@@ -34,9 +39,3 @@ The admin user and password are defined in the `docker-compose.yaml`. Because th
 ### Database management (GUI)
 
 To interact with the CouchDB server and database GUI while running the container, go to: `http://localhost:5984/_utils/`.
-
-## Connecting to the host from another device
-
-### Allowing on the firewall
-
-(TODO: instructions once I get it figured out for Fedora Linux)
