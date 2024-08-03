@@ -15,9 +15,11 @@ Note: this setup was done on Fedora Linux
 
 ### Creating SSL certificates
 
+> There is a problem with this approach. If you access this container through a web browser, you will have to accept the risk of this being a non-CA certificate (the browser will warn this is unsafe, which it is in other circumstances). This is totally fine because this runs only on your LAN.
+
 Because this container is running as a host for other devices to connect to, we need to setup HTTPS.
 
-This container is designed to be running over your LAN, so we'll be creating a certificate with a very long expiration date
+This container is designed to be running over your LAN, so we'll be creating a certificate with a very long expiration date.
 
 ```bash
 openssl req -newkey rsa:2048 -nodes -keyout couchdb.key -x509 -days 36500 -out couchdb.crt
