@@ -12,6 +12,7 @@ Note: this setup was done on Fedora Linux
 
 - Any computer that supports docker
 - Install [docker-compose](https://github.com/docker/compose)
+- `git clone` the project
 
 ### Creating SSL certificates
 
@@ -27,14 +28,13 @@ openssl req -newkey rsa:2048 -nodes -keyout couchdb.key -x509 -days 36500 -out c
 
 ### Running the container
 
-1. `git clone` the project
-2. In the project directory, run
+1. In the project directory, run
 
 ```bash
 docker compose up
 ```
 
-3. Once the container is running, find your local IP address:
+2. Once the container is running, find your local IP address:
    Typically, your local IP address will be the one that starts with `192.168.*` or `10.*`. It's usually the first `inet` line that doesn't start with `127.0.0.1`.
 
 ```bash
