@@ -4,17 +4,26 @@ This repo includes a docker-compose file that sets up a basic couchdb instance w
 
 This is made specifically to be the database server for [Notes](https://github.com/ste163/notes).
 
-## Requirements
+## Setup
 
-- A computer that supports docker
+Note: this setup was done on Fedora Linux
+
+### Requirements
+
+- Any computer that supports docker
 - Install [docker-compose](https://github.com/docker/compose)
 
-## Create certificates
+### Creating SSL certificates
 
-(If I can do all of this with a bash command, that would be cool!)
-Because this container is running a host, we need to setup HTTPS which means creating a certificate. This will allow other devices to make secure connections, even though this is all over LAN.
+Because this container is running as a host for other devices to connect to, we need to setup HTTPS.
 
-## Running the container
+This container is designed to be running over your LAN, so we'll be creating a certificate with a very long expiration date
+
+```bash
+openssl req -newkey rsa:2048 -nodes -keyout couchdb.key -x509 -days 36500 -out couchdb.crt
+```
+
+### Running the container
 
 1. `git clone` the project
 2. In the project directory, run
