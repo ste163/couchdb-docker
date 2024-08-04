@@ -6,7 +6,7 @@ This is made specifically to be the database server for [Notes](https://github.c
 
 ## Setup
 
-Note: this setup was done on Fedora Linux
+This setup was done on Fedora Linux and has not been tested on any other operating system.
 
 ### Requirements
 
@@ -14,7 +14,9 @@ Note: this setup was done on Fedora Linux
 - Install [docker-compose](https://github.com/docker/compose)
 - `git clone` the project
 
-### Creating SSL certificates
+### Creating SSL certificates (optional)
+
+TODO: once `notes` is released with the Tauri builds, I need to revisit whether to support `HTTPS` at all. It only somewhat works for browsers with hacky manual steps of approving the "unsafe" connection. The Tauri builds do not appear to have this issue because they are not hosted over `HTTPS`.
 
 > There is a problem with this approach. If you access this container through a web browser, you will have to accept the risk of this being a non-CA certificate (the browser will warn this is unsafe, which it is in other circumstances). This is totally fine because this runs only on your LAN.
 
