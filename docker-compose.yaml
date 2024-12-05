@@ -1,11 +1,10 @@
 version: "3"
 services:
   couchserver:
-    image: couchdb:3.3.2
+    image: couchdb:3.4.2
     restart: always
     ports:
       - "5984:5984"
-      - "6984:6984"
     networks:
       - localnetwork
     environment:
@@ -14,8 +13,6 @@ services:
     volumes:
       - ./dbdata:/opt/couchdb/data
       - ./local.ini:/opt/couchdb/etc/local.d/local.ini
-      - ./couchdb.crt:/opt/couchdb/etc/cert/couchdb.crt
-      - ./couchdb.key:/opt/couchdb/etc/cert/couchdb.key
 
 networks:
   localnetwork:
